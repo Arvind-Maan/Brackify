@@ -5,7 +5,7 @@ const Nav = () => {
 		<nav className="nav-container">
 			<div className="nav-wrapper">
 				<a href="#" className="logo">
-					{"{"}Brackify{"}"}
+					{"{Brackify}"}
 				</a>
 			</div>
 		</nav>
