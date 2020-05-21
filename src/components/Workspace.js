@@ -1,6 +1,6 @@
 import React from "react";
 
-const Workspace = () => {
+const Workspace = (props) => {
     return (
         <div className="workspace"> 
         </div>

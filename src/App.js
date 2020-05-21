@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Workspace from "./components/Workspace.js";
 import Nav from "./components/Nav.js";
 import Counter from "./components/Counter.js";
+import TournamentLayout from "./components/TournamentLayout.js";
 
 class App extends React.Component {
 	constructor() {
@@ -40,7 +40,8 @@ class App extends React.Component {
 			<div className="App">
 				<Nav />
 				<Counter onAdd={this.handleAdd} onSubtract={this.handleSubtract} />
-				<Workspace />
+				<TournamentLayout numOfBrackets={this.state.bracketSize} />
+				
 			</div>
 		);
 	}

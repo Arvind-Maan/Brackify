@@ -1,10 +1,12 @@
 import React from "react";
 
-const Bracket = () => {
+const Bracket = (props) => {
 	return (
-		<div className="bracket-container">
-			<h1> bracket </h1>
-		</div>
+		<section className="container">
+			<div>
+				<input></input>
+			</div>
+		</section>
 	);
 };
 
