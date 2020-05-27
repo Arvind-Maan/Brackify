@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Nav from "./components/Nav.js";
 import Counter from "./components/Counter.js";
-import TournamentLayout from "./components/TournamentLayout.js";
+import Bracket from "./components/Bracket";
 
 class App extends React.Component {
 	constructor() {
@@ -12,9 +12,19 @@ class App extends React.Component {
 		this.bracketSizeMin = 2;
 		this.state = {
 			bracketSize: 2,
+			apiResponse: "",
 		};
 	}
 
+	callAPI() {
+		fetch("http://localhost:9000/testAPI")
+			.then((res) => res.text())
+			.then((res) => this.setState({ apiResponse: res }));
+	}
+
+	componentWillMount() {
+		this.callAPI();
+	}
 	handleAdd = (e) => {
 		e.preventDefault();
 		const nextSize =
@@ -39,9 +49,8 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<Nav />
-				<Counter onAdd={this.handleAdd} onSubtract={this.handleSubtract} />
-				<TournamentLayout numOfBrackets={this.state.bracketSize} />
-				
+				<p> {this.state.apiResponse}</p>
+				<Bracket />
 			</div>
 		);
 	}
